@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<title>Joseph Silva Portfolio</title>
+<head>
+   <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
+</head>
+<!-- NOTE: Uses the w3school template https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_dark_portfolio&stacked=h> -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="img/Home.jpg" style="width:100%" style="height:30%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#calc" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-coffee w3-xxlarge"></i>
+    <p>CALCULATOR  </p>
+  </a>
+  <a href="#work" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-github w3-xxlarge"></i>
+    <p>MY WORK</p>
+  </a>
+
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#calc" class="w3-bar-item w3-button" style="width:25% !important">CALCULATOR</a>
+    <a href="#calc" class="w3-bar-item w3-button" style="width:25% !important">MY WORK</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">My Name is</span> Joseph Silva.</h1>
+    <p>Programmer, Coffee Lover and Film Photography Hobbyist.</p>
+       
+    <img src="img/Home.jpg" alt="Coffee" class="w3-image" width="90%" height="60%">
+  </header>
+
+  <!-- Portfolio Section -->
+<div class="w3-padding-64 w3-content" id="photos">
+  <h2 class="w3-text-light-grey">My Photos</h2>
+  <hr style="width:200px" class="w3-opacity">
+
+  <!-- Grid for photos -->
+  <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-half">
+      <img src="img/art.JPG" style="width:100%">
+      <img src="img/art2.JPG" style="width:100%">
+      <img src="img/moon.JPG" style="width:100%">
+    </div>
+
+    <div class="w3-half">
+      <img src="img/orion.JPG" style="width:100%">
+      <img src="img/stars.JPG" style="width:100%">
+      <img src="img/hassy.JPG" style="width:100%">
+      <img src="img/hassy2.JPG" style="width:100%">
+
+    </div>
+  <!-- End photo grid -->
+  </div>
+<!-- End Portfolio Section -->
+
+  <!-- Calc Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="calc">
+    <h2 class="w3-text-light-grey">Calculator</h2>
+      <hr style="width:200px" class="w3-opacity">
+          <div class="w3-container w3-center w3-black" ng-app="CalculatorApp" ng-controller="CalculatorController" id="app">
+            <h1 style=background-color:gray;">Espresso Calculator</h1>
+
+            <h1>Coffee Dose(g)</h1>
+
+            <p><input type="number" ng-model="a"> (g)</p>
+
+            <h1>Coffee Liquid Yield(g)</h1>
+            <p><input type="number" ng-model="b"> (g)</p>
+
+            <h1>Measured TDS(%)</h1>
+            <p><input type="number" ng-model="c"> (%)</p>
+
+
+            <p class="w3-container w3-black">Result: {{ result() }}% Extraction Yield</p>
+
+           <h1 style=background-color:gray;>Filter Coffee Brew Calculator</h1>
+
+             <h1>Coffee Dose(g)</h1>
+             <p><input type="number" ng-model="d"> (g)</p>
+
+             <h1>Water Input(g)</h1>
+             <p><input type="number" ng-model="e"> (g)</p>
+
+             <h1>Coffee Brew Yield(g)</h1>
+             <p><input type="number" ng-model="f"> (g)</p>
+
+             <h1>Measured TDS(%)</h1>
+             <p><input type="number" ng-model="g"> (%)</p>
+
+
+             <p class="w3-container w3-black">Brew Ratio: 1:{{ BrewRatio }} </p>
+
+             <p class="w3-container w3-black">Result: {{ result2() }}% Extraction Yield</p>
+           </div>
+
+     <script>
+          angular.module('CalculatorApp', [])
+            .controller('CalculatorController', function($scope) {
+                $scope.result = function() {
+              if ($scope.a !== 0)
+                    {
+                      return $scope.b * $scope.c / $scope.a;
+                    }
+              else  {
+                      alert("Cannot divide by 0");
+                    }
+                };
+                $scope.result2 = function() {
+              if ($scope.e !== 0 || $scope.d !== 0 )
+                    {
+                      $scope.BrewRatio = $scope.e / $scope.d;
+                      $scope.BrewTDS = $scope.g * $scope.f;
+                      $scope.EctractionYield = $scope.BrewTDS / $scope.d;
+                      return $scope.EctractionYield;
+                    }
+              else  {
+                      alert("Cannot divide by 0");
+                    }
+                };
+            });
+
+    </script>
+
+    <!-- Work Section -->
+    <div class="w3-padding-64 w3-content w3-text-grey" id="work">
+      <h2 class="w3-text-light-grey">My Github Page</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p class="w3-large"><a href="https://github.com/Firemission1343" target="_blank" class="w3-hover-text-green">Github Page</a></p>
+
+      <h2 class="w3-text-light-grey">My linkedin Page</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p class="w3-large"><a href="https://www.linkedin.com/in/joe-silva-88520b81/" target="_blank" class="w3-hover-text-green">Linkedin</a></p>
+      <h2 class="w3-text-light-grey">My experiences</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <div class="w3-section">
+        <p>
+          Serverside Networking <br>
+          Java <br>
+          Python <br>
+          Web Dev <br>
+          MySQL <br>
+          MongoDB <br>
+          Agile <br>
+          Game Design <br>
+          Unity Engine <br>
+          Blender <br>
+          Moderater <br>
+          OpenLiberty <br>
+          Linux1 <br>
+          Amazon AWS <br>
+          Ubuntu Server <br>
+          UML <br>
+          Ruby on Rails <br>
+        <a href="https://github.com/SUNYUlsterProjectOrion/Shopping-List" target="_blank" class="w3-hover-text-green">Waze-like Shopping List Application</a></p>
+        </p>
+        <hr style="width:200px" class="w3-opacity">
+      </div>
+    <!-- End Work Section -->
+    </div>
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <a href="https://github.com/Firemission1343" class="fa fa-github w3-hover-opacity"> </a>
+    <a href="https://www.linkedin.com/in/joe-silva-88520b81/" class="fa fa-linkedin w3-hover-opacity"></a>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
